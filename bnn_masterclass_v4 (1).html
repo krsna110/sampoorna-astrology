@@ -279,8 +279,8 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(165deg, #08050F 0%, #0D0A1A 40%, #12081E 100%);
-      color: #E8E0F0;
+      background: linear-gradient(165deg, #FAF6ED 0%, #F4EBD9 50%, #EADDC3 100%);
+      color: #4A3525;
       padding: 100px 0 80px;
       min-height: 100vh;
       min-height: 100dvh;
@@ -289,7 +289,10 @@
       text-align: center;
     }
 
-    .hero .wrap { position: relative; z-index: 2; }
+    .hero .wrap {
+      position: relative;
+      z-index: 2;
+    }
 
     /* ─── Background Layers ─── */
     .hero-bg {
@@ -308,73 +311,106 @@
     }
 
     .hero-glow--gold {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(201,162,39,.12), transparent 70%);
-      top: -15%; right: -8%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 162, 39, .18), transparent 70%);
+      top: -15%;
+      right: -8%;
     }
 
     .hero-glow--purple {
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(80,30,110,.15), transparent 70%);
-      bottom: -25%; left: -12%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(224, 117, 90, .16), transparent 70%);
+      bottom: -25%;
+      left: -12%;
     }
 
     .hero-glow--sindoor {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(194,74,58,.07), transparent 70%);
-      top: 50%; left: 35%; transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(194, 74, 58, .08), transparent 70%);
+      top: 50%;
+      left: 35%;
+      transform: translateY(-50%);
     }
 
     /* Zodiac Wheel */
     .hero-zodiac-wheel {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: min(950px, 130vw); height: min(950px, 130vw);
-      opacity: 0.05; z-index: 0;
+      width: min(950px, 130vw);
+      height: min(950px, 130vw);
+      opacity: 0.08;
+      z-index: 0;
       animation: hero-wheel-spin 180s linear infinite;
     }
 
     @keyframes hero-wheel-spin {
-      to { transform: translate(-50%, -50%) rotate(360deg); }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
     }
 
     /* Sacred Geometry */
     .hero-sacred-geo {
       position: absolute;
-      top: 50%; right: 0; transform: translateY(-50%);
-      width: min(550px, 65vw); height: min(550px, 65vw);
-      opacity: 0.035; z-index: 0;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: min(550px, 65vw);
+      height: min(550px, 65vw);
+      opacity: 0.06;
+      z-index: 0;
       animation: hero-sacred-pulse 8s ease-in-out infinite alternate;
     }
 
     @keyframes hero-sacred-pulse {
-      0% { opacity: 0.025; }
-      100% { opacity: 0.05; }
+      0% {
+        opacity: 0.04;
+      }
+
+      100% {
+        opacity: 0.08;
+      }
     }
 
     /* Orbit Rings */
     .hero-orbit-rings {
       position: absolute;
-      top: 50%; right: 8%; transform: translateY(-50%);
-      width: min(620px, 58vw); height: min(620px, 58vw);
-      opacity: 0.06; z-index: 0;
+      top: 50%;
+      right: 8%;
+      transform: translateY(-50%);
+      width: min(620px, 58vw);
+      height: min(620px, 58vw);
+      opacity: 0.09;
+      z-index: 0;
     }
 
     /* Constellation */
     .hero-constellation {
       position: absolute;
       pointer-events: none;
-      opacity: 0.25; z-index: 0;
+      opacity: 0.35;
+      z-index: 0;
     }
 
-    .hero-constellation svg { width: 100%; height: 100%; display: block; }
+    .hero-constellation svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
     /* Particles Canvas */
     .hero-particles {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; z-index: 1;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
     }
 
     /* ─── Content Grid (Split Layout) ─── */
@@ -382,7 +418,8 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 28px;
-      position: relative; z-index: 5;
+      position: relative;
+      z-index: 5;
       display: grid;
       grid-template-columns: 1fr;
       gap: 52px;
@@ -390,7 +427,10 @@
     }
 
     @media (min-width: 992px) {
-      .hero { padding: 0; }
+      .hero {
+        padding: 0;
+      }
+
       .hero-content {
         grid-template-columns: 1.1fr 1fr;
         gap: 56px;
@@ -406,7 +446,9 @@
     }
 
     @media (min-width: 992px) {
-      .hero-left { text-align: left; }
+      .hero-left {
+        text-align: left;
+      }
     }
 
     /* Live Pill */
@@ -416,33 +458,46 @@
       gap: 9px;
       padding: 8px 20px;
       border-radius: 40px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,162,39,.2);
+      background: rgba(107, 50, 22, .04);
+      border: 1px solid rgba(224, 117, 90, .3);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      font-size: 11px; font-weight: 700;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: #C24A3A;
       width: fit-content;
       margin: 0 auto 32px;
     }
 
     @media (min-width: 992px) {
-      .hero-live-pill { margin: 0 0 32px; }
+      .hero-live-pill {
+        margin: 0 0 32px;
+      }
     }
 
     .hero-live-dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: #ff5c5c;
+      background: #ff4a4a;
       flex: none;
       animation: hero-live-pulse 1.6s ease-in-out infinite;
     }
 
     @keyframes hero-live-pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,92,92,.5); }
-      50% { opacity: .5; box-shadow: 0 0 0 7px rgba(255,92,92,0); }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 74, 74, .5);
+      }
+
+      50% {
+        opacity: .5;
+        box-shadow: 0 0 0 7px rgba(255, 74, 74, 0);
+      }
     }
 
     /* Title */
@@ -453,7 +508,7 @@
       font-weight: 400;
       letter-spacing: -.02em;
       margin-bottom: 10px;
-      background: linear-gradient(160deg, #FFFFFF 0%, #F5E1A4 30%, #C9A227 65%, #E8C766 100%);
+      background: linear-gradient(135deg, #3D1B0C 0%, #6B3216 45%, #8C4A24 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -463,27 +518,34 @@
       font-family: var(--display);
       font-size: clamp(20px, 4.5vw, 32px);
       line-height: 1.25;
-      color: rgba(232,199,102,.75);
+      color: #8C4A24;
       margin-bottom: 22px;
       letter-spacing: .01em;
     }
 
-    .hero-title-sub span { color: var(--gold-light); }
+    .hero-title-sub span {
+      color: #C24A3A;
+    }
 
     /* Description */
     .hero-desc {
       font-size: clamp(14.5px, 2.2vw, 16.5px);
-      color: rgba(200,195,220,.7);
+      color: #5A4C3E;
       line-height: 1.75;
       max-width: 520px;
       margin: 0 auto 26px;
     }
 
     @media (min-width: 992px) {
-      .hero-desc { margin: 0 0 26px; }
+      .hero-desc {
+        margin: 0 0 26px;
+      }
     }
 
-    .hero-desc b { color: #fff; font-weight: 600; }
+    .hero-desc b {
+      color: #26150E;
+      font-weight: 600;
+    }
 
     /* Info Badges */
     .hero-info-grid {
@@ -495,7 +557,9 @@
     }
 
     @media (min-width: 992px) {
-      .hero-info-grid { justify-content: flex-start; }
+      .hero-info-grid {
+        justify-content: flex-start;
+      }
     }
 
     .hero-info-badge {
@@ -505,70 +569,85 @@
       gap: 4px;
       padding: 10px 18px;
       border-radius: 12px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(201,162,39,.15);
+      background: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(201, 162, 39, .18);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(107, 50, 22, .04);
     }
 
     .hero-info-badge .label {
       font-size: 9px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(200,195,220,.4);
+      color: rgba(90, 77, 59, .6);
       font-weight: 600;
     }
 
     .hero-info-badge .value {
       font-size: 12.5px;
       font-weight: 700;
-      color: var(--gold-light);
+      color: #6B3216;
     }
 
     /* Hero CTA */
-    .hero-cta-wrap { margin-bottom: 30px; }
+    .hero-cta-wrap {
+      margin-bottom: 30px;
+    }
 
-    .hero-cta-wrap .cta { max-width: 440px; }
+    .hero-cta-wrap .cta {
+      max-width: 440px;
+    }
 
     @media (min-width: 992px) {
-      .hero-cta-wrap .cta { margin: 0; }
+      .hero-cta-wrap .cta {
+        margin: 0;
+      }
     }
 
     .hero-cta-note {
       font-size: 12.5px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .7);
       margin-top: 12px;
       text-align: center;
     }
 
     @media (min-width: 992px) {
-      .hero-cta-note { text-align: left; }
+      .hero-cta-note {
+        text-align: left;
+      }
     }
 
     /* Trust Row */
     .hero-trust-row {
-      display: flex; flex-wrap: wrap;
+      display: flex;
+      flex-wrap: wrap;
       gap: 8px 20px;
       justify-content: center;
     }
 
     @media (min-width: 992px) {
-      .hero-trust-row { justify-content: flex-start; }
+      .hero-trust-row {
+        justify-content: flex-start;
+      }
     }
 
     .hero-trust-item {
-      display: flex; align-items: center;
+      display: flex;
+      align-items: center;
       gap: 7px;
-      font-size: 12px; font-weight: 600;
-      color: rgba(200,195,220,.5);
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(90, 77, 59, .75);
     }
 
     .hero-trust-item .icon {
-      width: 5px; height: 5px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
-      background: var(--gold-light);
+      background: #E0755A;
       flex: none;
-      box-shadow: 0 0 8px rgba(232,199,102,.4);
+      box-shadow: 0 0 6px rgba(224, 117, 90, .3);
     }
 
     /* ─── Right Column ─── */
@@ -583,7 +662,8 @@
 
     /* Portrait + Halo */
     .hero-portrait-wrap {
-      position: relative; z-index: 3;
+      position: relative;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -592,64 +672,97 @@
 
     .hero-halo {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -55%);
-      width: 340px; height: 340px;
-      pointer-events: none; z-index: 0;
+      width: 340px;
+      height: 340px;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-halo-ring {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(232,199,102,.1);
-      top: 50%; left: 50%;
+      border: 1px solid rgba(201, 162, 39, .15);
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    .hero-halo-ring:nth-child(1) { width: 100%; height: 100%; border-color: rgba(232,199,102,.06); }
-    .hero-halo-ring:nth-child(2) { width: 82%; height: 82%; border-color: rgba(232,199,102,.1); }
-    .hero-halo-ring:nth-child(3) { width: 64%; height: 64%; border-color: rgba(232,199,102,.16); }
+    .hero-halo-ring:nth-child(1) {
+      width: 100%;
+      height: 100%;
+      border-color: rgba(201, 162, 39, .08);
+    }
+
+    .hero-halo-ring:nth-child(2) {
+      width: 82%;
+      height: 82%;
+      border-color: rgba(201, 162, 39, .12);
+    }
+
+    .hero-halo-ring:nth-child(3) {
+      width: 64%;
+      height: 64%;
+      border-color: rgba(201, 162, 39, .18);
+    }
 
     .hero-halo-glow {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 280px; height: 280px;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,199,102,.18) 0%, rgba(232,199,102,.04) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(232, 199, 102, .24) 0%, rgba(224, 117, 90, .08) 50%, transparent 70%);
       animation: hero-halo-breathe 4s ease-in-out infinite;
       z-index: 0;
     }
 
     @keyframes hero-halo-breathe {
-      0%, 100% { opacity: .5; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.18); }
+
+      0%,
+      100% {
+        opacity: .5;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.18);
+      }
     }
 
     .hero-portrait {
-      position: relative; z-index: 2;
-      width: 200px; height: 200px;
+      position: relative;
+      z-index: 2;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(232,199,102,.45);
-      box-shadow: 0 0 50px rgba(232,199,102,.12), 0 20px 60px -15px rgba(0,0,0,.5);
+      border: 3px solid rgba(201, 162, 39, .45);
+      box-shadow: 0 10px 40px rgba(107, 50, 22, .08), 0 0 30px rgba(232, 199, 102, .1);
     }
 
     .hero-portrait-name {
       text-align: center;
       margin-top: 14px;
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-portrait-name b {
       font-family: var(--display);
-      font-size: 19px; color: #fff;
+      font-size: 19px;
+      color: #26150E;
       display: block;
     }
 
     .hero-portrait-name span {
       font-size: 11.5px;
-      color: rgba(232,199,102,.6);
+      color: #8C4A24;
       letter-spacing: .04em;
     }
 
@@ -658,7 +771,8 @@
       justify-content: center;
       gap: 22px;
       margin-top: 10px;
-      position: relative; z-index: 2;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-stat-item {
@@ -667,11 +781,14 @@
       align-items: center;
     }
 
-    .hero-stat-item b { font-size: 15px; color: #fff; }
+    .hero-stat-item b {
+      font-size: 15px;
+      color: #3D1B0C;
+    }
 
     .hero-stat-item span {
       font-size: 9px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .65);
       text-transform: uppercase;
       letter-spacing: .08em;
       margin-top: 1px;
@@ -679,18 +796,20 @@
 
     /* Floating Price Card (Glassmorphism) */
     .hero-price-card {
-      position: relative; z-index: 4;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(232,199,102,.18);
+      position: relative;
+      z-index: 4;
+      background: rgba(255, 255, 255, .55);
+      border: 1px solid rgba(201, 162, 39, .22);
       border-radius: 22px;
       padding: 26px 28px 28px;
-      width: 100%; max-width: 380px;
+      width: 100%;
+      max-width: 380px;
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       box-shadow:
-        0 8px 32px rgba(0,0,0,.3),
-        0 0 0 1px rgba(255,255,255,.02) inset,
-        0 1px 0 rgba(255,255,255,.04) inset;
+        0 20px 50px rgba(107, 50, 22, .08),
+        0 0 0 1px rgba(255, 255, 255, .7) inset,
+        0 1px 0 rgba(255, 255, 255, .04) inset;
     }
 
     .hero-price-row {
@@ -703,14 +822,15 @@
 
     .hero-price-strike {
       font-size: 20px;
-      color: rgba(200,195,220,.4);
+      color: rgba(90, 77, 59, .5);
       text-decoration: line-through;
     }
 
     .hero-price-now {
       font-family: var(--display);
-      font-size: 56px; line-height: 1;
-      background: linear-gradient(180deg, #fff 20%, var(--gold-light) 90%);
+      font-size: 56px;
+      line-height: 1;
+      background: linear-gradient(180deg, #3D1B0C 20%, #6B3216 90%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -726,13 +846,15 @@
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: #C24A3A;
       font-weight: 700;
       text-align: center;
       margin-bottom: 18px;
     }
 
-    .hero-price-card .cta { margin-bottom: 14px; }
+    .hero-price-card .cta {
+      margin-bottom: 14px;
+    }
 
     /* Countdown */
     .hero-countdown {
@@ -743,8 +865,8 @@
     }
 
     .hero-cd-box {
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(232,199,102,.12);
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(201, 162, 39, .18);
       border-radius: 10px;
       padding: 8px 4px;
       min-width: 54px;
@@ -754,7 +876,7 @@
     .hero-cd-num {
       font-family: var(--display);
       font-size: 22px;
-      color: var(--gold-light);
+      color: #6B3216;
       line-height: 1;
       overflow: hidden;
     }
@@ -763,7 +885,7 @@
       font-size: 8px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(200,195,220,.35);
+      color: rgba(90, 77, 59, .6);
       margin-top: 3px;
     }
 
@@ -772,37 +894,59 @@
     }
 
     @keyframes cd-flip {
-      0% { transform: translateY(0); opacity: 1; }
-      40% { transform: translateY(-100%); opacity: 0; }
-      60% { transform: translateY(100%); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      40% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      60% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     /* When line */
     .hero-when {
       font-size: 12.5px;
-      color: rgba(200,195,220,.55);
+      color: rgba(90, 77, 59, .75);
       text-align: center;
     }
 
-    .hero-when b { color: var(--gold-light); }
+    .hero-when b {
+      color: #C24A3A;
+    }
 
     /* Seats bar */
-    .hero-seats-wrap { margin-top: 12px; }
+    .hero-seats-wrap {
+      margin-top: 12px;
+    }
 
     .hero-seats-labels {
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .65);
       margin-bottom: 5px;
     }
 
-    .hero-seats-labels b { color: var(--gold-light); }
+    .hero-seats-labels b {
+      color: #6B3216;
+    }
 
     .hero-seats-track {
-      width: 100%; height: 5px;
-      background: rgba(255,255,255,.07);
+      width: 100%;
+      height: 5px;
+      background: rgba(107, 50, 22, .06);
       border-radius: 8px;
       overflow: hidden;
     }
@@ -810,35 +954,45 @@
     .hero-seats-fill {
       height: 100%;
       width: var(--seats-pct, 78%);
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold-light));
+      background: linear-gradient(90deg, #8C4A24, #C9A227);
       border-radius: 8px;
       position: relative;
     }
 
     .hero-seats-fill::after {
       content: "";
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
       animation: hero-seats-shimmer 2.6s ease-in-out infinite;
     }
 
     @keyframes hero-seats-shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     /* Celestial orbits behind portrait */
     .hero-orbits {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 520px; height: 520px;
-      pointer-events: none; z-index: 1;
-      opacity: .07;
+      width: 520px;
+      height: 520px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .12;
     }
 
     /* Hero reduced motion */
     @media (prefers-reduced-motion: reduce) {
+
       .hero-zodiac-wheel,
       .hero-sacred-geo,
       .hero-live-dot,
@@ -847,6 +1001,7 @@
       .hero-seats-fill::after {
         animation: none !important;
       }
+
       .hero-zodiac-wheel {
         transform: translate(-50%, -50%);
       }
@@ -857,6 +1012,7 @@
       .hero {
         padding: 80px 0 60px;
       }
+
       .hero-content {
         gap: 40px;
       }
@@ -871,7 +1027,7 @@
         padding: 0 16px;
         gap: 32px;
       }
-      
+
       .hero-live-pill {
         margin-bottom: 24px;
       }
@@ -963,15 +1119,16 @@
       .hero-portrait-name b {
         font-size: 17px;
       }
-      
+
       .hero-stats-row {
         gap: 16px;
       }
-      
+
       .hero-stat-item b {
         font-size: 13px;
       }
     }
+
 
     /* ─── Shared: Diya Styles (used by final CTA + dividers) ─── */
     .diya-wrap {
@@ -982,7 +1139,10 @@
       z-index: 2;
     }
 
-    .diya-wrap svg { width: 64px; height: 64px; }
+    .diya-wrap svg {
+      width: 64px;
+      height: 64px;
+    }
 
     .flame {
       animation: flicker 2.2s ease-in-out infinite;
@@ -990,27 +1150,48 @@
     }
 
     @keyframes flicker {
-      0%, 100% { transform: scaleY(1) scaleX(1) rotate(0); }
-      30% { transform: scaleY(1.08) scaleX(.95) rotate(-2deg); }
-      60% { transform: scaleY(.94) scaleX(1.05) rotate(2deg); }
+
+      0%,
+      100% {
+        transform: scaleY(1) scaleX(1) rotate(0);
+      }
+
+      30% {
+        transform: scaleY(1.08) scaleX(.95) rotate(-2deg);
+      }
+
+      60% {
+        transform: scaleY(.94) scaleX(1.05) rotate(2deg);
+      }
     }
 
     .diya-wrap::after {
       content: "";
       position: absolute;
-      top: 50%; left: 50%;
-      width: 80px; height: 80px;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(232,199,102,.45), rgba(232,199,102,.15) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(232, 199, 102, .45), rgba(232, 199, 102, .15) 40%, transparent 70%);
       animation: diya-glow 2.5s ease-in-out infinite;
       pointer-events: none;
       z-index: 0;
     }
 
     @keyframes diya-glow {
-      0%, 100% { opacity: .6; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.35); }
+
+      0%,
+      100% {
+        opacity: .6;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.35);
+      }
     }
 
 
@@ -1939,7 +2120,7 @@
         opacity: 1;
         transform: none;
         transition: none;
-        }
+      }
 
       .learn .li {
         opacity: 1;
@@ -2019,7 +2200,8 @@
           <circle cx="88" cy="217" r="4" />
           <circle cx="217" cy="88" r="4" />
         </g>
-        <g font-family="serif" font-size="22" fill="#E8C766" text-anchor="middle" dominant-baseline="central" opacity="0.8">
+        <g font-family="serif" font-size="22" fill="#E8C766" text-anchor="middle" dominant-baseline="central"
+          opacity="0.8">
           <text x="400" y="55">♈</text>
           <text x="568" y="108">♉</text>
           <text x="695" y="235">♊</text>
@@ -2148,17 +2330,21 @@
         <p class="hero-desc" id="hero-desc">Bhrigu Nandi Nadi ek aisa planet-based system hai jisme dashas
           ratt-ne ki zaroorat nahi. Sirf conjunctions aur transits samajh kar aap shaadi, career, paisa aur
           life ke bade moments ki <b>timing</b> tak nikaal sakte ho — aur ek aisi skill paao jisse aap
-          <b>consulting practice</b> bhi shuru kar sakein.</p>
+          <b>consulting practice</b> bhi shuru kar sakein.
+        </p>
 
         <div class="hero-info-grid" id="hero-info">
-          <div class="hero-info-badge"><span class="label">Format</span><span class="value">Live Masterclass</span></div>
+          <div class="hero-info-badge"><span class="label">Format</span><span class="value">Live Masterclass</span>
+          </div>
           <div class="hero-info-badge"><span class="label">Start</span><span class="value">{{WEBINAR_DATE}}</span></div>
           <div class="hero-info-badge"><span class="label">Language</span><span class="value">Hindi</span></div>
-          <div class="hero-info-badge"><span class="label">Duration</span><span class="value">{{SESSION_DURATION}}</span></div>
+          <div class="hero-info-badge"><span class="label">Duration</span><span
+              class="value">{{SESSION_DURATION}}</span></div>
         </div>
 
         <div class="hero-cta-wrap" id="hero-cta">
-          <a class="cta" href="{{REGISTER_LINK}}">Haan, ₹21 Mein Seat Chahiye<small>WhatsApp Par Turant Confirmation</small><span class="shimmer"></span></a>
+          <a class="cta" href="{{REGISTER_LINK}}">Haan, ₹21 Mein Seat Chahiye<small>WhatsApp Par Turant
+              Confirmation</small><span class="shimmer"></span></a>
           <p class="hero-cta-note">Do samosa ke price mein — ek skill jo poori zindagi kaam aayegi.</p>
         </div>
 
@@ -2181,7 +2367,9 @@
             <ellipse cx="250" cy="250" rx="130" ry="55" transform="rotate(-45, 250, 250)" />
           </g>
           <g fill="#E8C766" opacity="0.6">
-            <circle cx="430" cy="190" r="3" /><circle cx="100" cy="330" r="2.5" /><circle cx="320" cy="140" r="2" />
+            <circle cx="430" cy="190" r="3" />
+            <circle cx="100" cy="330" r="2.5" />
+            <circle cx="320" cy="140" r="2" />
           </g>
         </svg>
 
@@ -2193,7 +2381,7 @@
             <div class="hero-halo-ring"></div>
             <div class="hero-halo-glow"></div>
           </div>
-          <img class="hero-portrait" src="ChatGPT Image Jul 13, 2026, 12_34_15 PM.png"
+          <img class="hero-portrait" src="ChatGPT Image Jul 14, 2026, 02_17_55 PM.png"
             alt="Dr. Anchal Rana — BNN Masterclass Mentor">
           <div class="hero-portrait-name">
             <b>Dr. Anchal Rana</b>
@@ -2213,12 +2401,25 @@
             <span class="hero-price-now"><span>₹</span>21</span>
           </div>
           <div class="hero-price-label">Single Entry • Live Session</div>
-          <a class="cta" href="{{REGISTER_LINK}}">Haan, ₹21 Mein Seat Chahiye<small>WhatsApp Par Turant Confirmation</small><span class="shimmer"></span></a>
+          <a class="cta" href="{{REGISTER_LINK}}">Haan, ₹21 Mein Seat Chahiye<small>WhatsApp Par Turant
+              Confirmation</small><span class="shimmer"></span></a>
           <div class="hero-countdown" id="cd" aria-label="Registration closing countdown">
-            <div class="hero-cd-box"><div class="hero-cd-num" id="cd-d">00</div><div class="hero-cd-lab">Days</div></div>
-            <div class="hero-cd-box"><div class="hero-cd-num" id="cd-h">00</div><div class="hero-cd-lab">Hrs</div></div>
-            <div class="hero-cd-box"><div class="hero-cd-num" id="cd-m">00</div><div class="hero-cd-lab">Min</div></div>
-            <div class="hero-cd-box"><div class="hero-cd-num" id="cd-s">00</div><div class="hero-cd-lab">Sec</div></div>
+            <div class="hero-cd-box">
+              <div class="hero-cd-num" id="cd-d">00</div>
+              <div class="hero-cd-lab">Days</div>
+            </div>
+            <div class="hero-cd-box">
+              <div class="hero-cd-num" id="cd-h">00</div>
+              <div class="hero-cd-lab">Hrs</div>
+            </div>
+            <div class="hero-cd-box">
+              <div class="hero-cd-num" id="cd-m">00</div>
+              <div class="hero-cd-lab">Min</div>
+            </div>
+            <div class="hero-cd-box">
+              <div class="hero-cd-num" id="cd-s">00</div>
+              <div class="hero-cd-lab">Sec</div>
+            </div>
           </div>
           <p class="hero-when">📅 <b>{{WEBINAR_DATE}}</b> &nbsp;•&nbsp; ⏰ <b>{{WEBINAR_TIME}}</b></p>
           <div class="hero-seats-wrap">
@@ -2237,7 +2438,7 @@
   </header>
 
 
-<!-- ─── Trust Strip ─── -->
+  <!-- ─── Trust Strip ─── -->
   <div class="trust">
     <div class="wrap">
       <div class="row">
@@ -2937,7 +3138,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
     // â”€â”€â”€ Hero GSAP entrance animations â”€â”€â”€
-    (function() {
+    (function () {
       if (typeof gsap === "undefined" || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       var tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -2964,6 +3165,7 @@
         y: -8, duration: 4, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 1
       });
     })();
-  </script></body>
+  </script>
+</body>
 
 </html>

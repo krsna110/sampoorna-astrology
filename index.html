@@ -276,11 +276,11 @@
    HERO SECTION — Premium Redesign
    ═══════════════════════════════ */
 
-    .hero {
+        .hero {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(165deg, #08050F 0%, #0D0A1A 40%, #12081E 100%);
-      color: #E8E0F0;
+      background: linear-gradient(165deg, #FAF6ED 0%, #F4EBD9 50%, #EADDC3 100%);
+      color: #4A3525;
       padding: 100px 0 80px;
       min-height: 100vh;
       min-height: 100dvh;
@@ -309,19 +309,19 @@
 
     .hero-glow--gold {
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(201,162,39,.12), transparent 70%);
+      background: radial-gradient(circle, rgba(201,162,39,.18), transparent 70%);
       top: -15%; right: -8%;
     }
 
     .hero-glow--purple {
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(80,30,110,.15), transparent 70%);
+      background: radial-gradient(circle, rgba(224,117,90,.16), transparent 70%);
       bottom: -25%; left: -12%;
     }
 
     .hero-glow--sindoor {
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(194,74,58,.07), transparent 70%);
+      background: radial-gradient(circle, rgba(194,74,58,.08), transparent 70%);
       top: 50%; left: 35%; transform: translateY(-50%);
     }
 
@@ -331,7 +331,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: min(950px, 130vw); height: min(950px, 130vw);
-      opacity: 0.05; z-index: 0;
+      opacity: 0.08; z-index: 0;
       animation: hero-wheel-spin 180s linear infinite;
     }
 
@@ -344,13 +344,13 @@
       position: absolute;
       top: 50%; right: 0; transform: translateY(-50%);
       width: min(550px, 65vw); height: min(550px, 65vw);
-      opacity: 0.035; z-index: 0;
+      opacity: 0.06; z-index: 0;
       animation: hero-sacred-pulse 8s ease-in-out infinite alternate;
     }
 
     @keyframes hero-sacred-pulse {
-      0% { opacity: 0.025; }
-      100% { opacity: 0.05; }
+      0% { opacity: 0.04; }
+      100% { opacity: 0.08; }
     }
 
     /* Orbit Rings */
@@ -358,14 +358,14 @@
       position: absolute;
       top: 50%; right: 8%; transform: translateY(-50%);
       width: min(620px, 58vw); height: min(620px, 58vw);
-      opacity: 0.06; z-index: 0;
+      opacity: 0.09; z-index: 0;
     }
 
     /* Constellation */
     .hero-constellation {
       position: absolute;
       pointer-events: none;
-      opacity: 0.25; z-index: 0;
+      opacity: 0.35; z-index: 0;
     }
 
     .hero-constellation svg { width: 100%; height: 100%; display: block; }
@@ -416,14 +416,14 @@
       gap: 9px;
       padding: 8px 20px;
       border-radius: 40px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(201,162,39,.2);
+      background: rgba(107, 50, 22, .04);
+      border: 1px solid rgba(224, 117, 90, .3);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       font-size: 11px; font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: #C24A3A;
       width: fit-content;
       margin: 0 auto 32px;
     }
@@ -435,14 +435,14 @@
     .hero-live-dot {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: #ff5c5c;
+      background: #ff4a4a;
       flex: none;
       animation: hero-live-pulse 1.6s ease-in-out infinite;
     }
 
     @keyframes hero-live-pulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,92,92,.5); }
-      50% { opacity: .5; box-shadow: 0 0 0 7px rgba(255,92,92,0); }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,74,74,.5); }
+      50% { opacity: .5; box-shadow: 0 0 0 7px rgba(255,74,74,0); }
     }
 
     /* Title */
@@ -453,7 +453,7 @@
       font-weight: 400;
       letter-spacing: -.02em;
       margin-bottom: 10px;
-      background: linear-gradient(160deg, #FFFFFF 0%, #F5E1A4 30%, #C9A227 65%, #E8C766 100%);
+      background: linear-gradient(135deg, #3D1B0C 0%, #6B3216 45%, #8C4A24 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -463,17 +463,17 @@
       font-family: var(--display);
       font-size: clamp(20px, 4.5vw, 32px);
       line-height: 1.25;
-      color: rgba(232,199,102,.75);
+      color: #8C4A24;
       margin-bottom: 22px;
       letter-spacing: .01em;
     }
 
-    .hero-title-sub span { color: var(--gold-light); }
+    .hero-title-sub span { color: #C24A3A; }
 
     /* Description */
     .hero-desc {
       font-size: clamp(14.5px, 2.2vw, 16.5px);
-      color: rgba(200,195,220,.7);
+      color: #5A4C3E;
       line-height: 1.75;
       max-width: 520px;
       margin: 0 auto 26px;
@@ -483,7 +483,7 @@
       .hero-desc { margin: 0 0 26px; }
     }
 
-    .hero-desc b { color: #fff; font-weight: 600; }
+    .hero-desc b { color: #26150E; font-weight: 600; }
 
     /* Info Badges */
     .hero-info-grid {
@@ -505,24 +505,25 @@
       gap: 4px;
       padding: 10px 18px;
       border-radius: 12px;
-      background: rgba(255,255,255,.025);
-      border: 1px solid rgba(201,162,39,.15);
+      background: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(201, 162, 39, .18);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(107, 50, 22, .04);
     }
 
     .hero-info-badge .label {
       font-size: 9px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(200,195,220,.4);
+      color: rgba(90, 77, 59, .6);
       font-weight: 600;
     }
 
     .hero-info-badge .value {
       font-size: 12.5px;
       font-weight: 700;
-      color: var(--gold-light);
+      color: #6B3216;
     }
 
     /* Hero CTA */
@@ -536,7 +537,7 @@
 
     .hero-cta-note {
       font-size: 12.5px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .7);
       margin-top: 12px;
       text-align: center;
     }
@@ -560,15 +561,15 @@
       display: flex; align-items: center;
       gap: 7px;
       font-size: 12px; font-weight: 600;
-      color: rgba(200,195,220,.5);
+      color: rgba(90, 77, 59, .75);
     }
 
     .hero-trust-item .icon {
       width: 5px; height: 5px;
       border-radius: 50%;
-      background: var(--gold-light);
+      background: #E0755A;
       flex: none;
-      box-shadow: 0 0 8px rgba(232,199,102,.4);
+      box-shadow: 0 0 6px rgba(224, 117, 90, .3);
     }
 
     /* ─── Right Column ─── */
@@ -601,14 +602,14 @@
     .hero-halo-ring {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(232,199,102,.1);
+      border: 1px solid rgba(201, 162, 39, .15);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    .hero-halo-ring:nth-child(1) { width: 100%; height: 100%; border-color: rgba(232,199,102,.06); }
-    .hero-halo-ring:nth-child(2) { width: 82%; height: 82%; border-color: rgba(232,199,102,.1); }
-    .hero-halo-ring:nth-child(3) { width: 64%; height: 64%; border-color: rgba(232,199,102,.16); }
+    .hero-halo-ring:nth-child(1) { width: 100%; height: 100%; border-color: rgba(201, 162, 39, .08); }
+    .hero-halo-ring:nth-child(2) { width: 82%; height: 82%; border-color: rgba(201, 162, 39, .12); }
+    .hero-halo-ring:nth-child(3) { width: 64%; height: 64%; border-color: rgba(201, 162, 39, .18); }
 
     .hero-halo-glow {
       position: absolute;
@@ -616,7 +617,7 @@
       transform: translate(-50%, -50%);
       width: 280px; height: 280px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(232,199,102,.18) 0%, rgba(232,199,102,.04) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(232, 199, 102, .24) 0%, rgba(224, 117, 90, .08) 50%, transparent 70%);
       animation: hero-halo-breathe 4s ease-in-out infinite;
       z-index: 0;
     }
@@ -631,8 +632,8 @@
       width: 200px; height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(232,199,102,.45);
-      box-shadow: 0 0 50px rgba(232,199,102,.12), 0 20px 60px -15px rgba(0,0,0,.5);
+      border: 3px solid rgba(201, 162, 39, .45);
+      box-shadow: 0 10px 40px rgba(107, 50, 22, .08), 0 0 30px rgba(232, 199, 102, .1);
     }
 
     .hero-portrait-name {
@@ -643,13 +644,13 @@
 
     .hero-portrait-name b {
       font-family: var(--display);
-      font-size: 19px; color: #fff;
+      font-size: 19px; color: #26150E;
       display: block;
     }
 
     .hero-portrait-name span {
       font-size: 11.5px;
-      color: rgba(232,199,102,.6);
+      color: #8C4A24;
       letter-spacing: .04em;
     }
 
@@ -667,11 +668,11 @@
       align-items: center;
     }
 
-    .hero-stat-item b { font-size: 15px; color: #fff; }
+    .hero-stat-item b { font-size: 15px; color: #3D1B0C; }
 
     .hero-stat-item span {
       font-size: 9px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .65);
       text-transform: uppercase;
       letter-spacing: .08em;
       margin-top: 1px;
@@ -680,17 +681,17 @@
     /* Floating Price Card (Glassmorphism) */
     .hero-price-card {
       position: relative; z-index: 4;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(232,199,102,.18);
+      background: rgba(255, 255, 255, .55);
+      border: 1px solid rgba(201, 162, 39, .22);
       border-radius: 22px;
       padding: 26px 28px 28px;
       width: 100%; max-width: 380px;
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       box-shadow:
-        0 8px 32px rgba(0,0,0,.3),
-        0 0 0 1px rgba(255,255,255,.02) inset,
-        0 1px 0 rgba(255,255,255,.04) inset;
+        0 20px 50px rgba(107, 50, 22, .08),
+        0 0 0 1px rgba(255, 255, 255, .7) inset,
+        0 1px 0 rgba(255, 255, 255, .04) inset;
     }
 
     .hero-price-row {
@@ -703,14 +704,14 @@
 
     .hero-price-strike {
       font-size: 20px;
-      color: rgba(200,195,220,.4);
+      color: rgba(90, 77, 59, .5);
       text-decoration: line-through;
     }
 
     .hero-price-now {
       font-family: var(--display);
       font-size: 56px; line-height: 1;
-      background: linear-gradient(180deg, #fff 20%, var(--gold-light) 90%);
+      background: linear-gradient(180deg, #3D1B0C 20%, #6B3216 90%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -726,7 +727,7 @@
       font-size: 11px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: #C24A3A;
       font-weight: 700;
       text-align: center;
       margin-bottom: 18px;
@@ -743,8 +744,8 @@
     }
 
     .hero-cd-box {
-      background: rgba(0,0,0,.25);
-      border: 1px solid rgba(232,199,102,.12);
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(201, 162, 39, .18);
       border-radius: 10px;
       padding: 8px 4px;
       min-width: 54px;
@@ -754,7 +755,7 @@
     .hero-cd-num {
       font-family: var(--display);
       font-size: 22px;
-      color: var(--gold-light);
+      color: #6B3216;
       line-height: 1;
       overflow: hidden;
     }
@@ -763,7 +764,7 @@
       font-size: 8px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(200,195,220,.35);
+      color: rgba(90, 77, 59, .6);
       margin-top: 3px;
     }
 
@@ -781,11 +782,11 @@
     /* When line */
     .hero-when {
       font-size: 12.5px;
-      color: rgba(200,195,220,.55);
+      color: rgba(90, 77, 59, .75);
       text-align: center;
     }
 
-    .hero-when b { color: var(--gold-light); }
+    .hero-when b { color: #C24A3A; }
 
     /* Seats bar */
     .hero-seats-wrap { margin-top: 12px; }
@@ -794,15 +795,15 @@
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: rgba(200,195,220,.45);
+      color: rgba(90, 77, 59, .65);
       margin-bottom: 5px;
     }
 
-    .hero-seats-labels b { color: var(--gold-light); }
+    .hero-seats-labels b { color: #6B3216; }
 
     .hero-seats-track {
       width: 100%; height: 5px;
-      background: rgba(255,255,255,.07);
+      background: rgba(107, 50, 22, .06);
       border-radius: 8px;
       overflow: hidden;
     }
@@ -810,7 +811,7 @@
     .hero-seats-fill {
       height: 100%;
       width: var(--seats-pct, 78%);
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold-light));
+      background: linear-gradient(90deg, #8C4A24, #C9A227);
       border-radius: 8px;
       position: relative;
     }
@@ -834,7 +835,7 @@
       transform: translate(-50%, -50%);
       width: 520px; height: 520px;
       pointer-events: none; z-index: 1;
-      opacity: .07;
+      opacity: .12;
     }
 
     /* Hero reduced motion */
@@ -972,6 +973,7 @@
         font-size: 13px;
       }
     }
+
 
     /* ─── Shared: Diya Styles (used by final CTA + dividers) ─── */
     .diya-wrap {
