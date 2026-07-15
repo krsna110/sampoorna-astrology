@@ -3124,673 +3124,474 @@ footer a {
 
 
 /* ═════════════════════════════════════════════════
-   FULL-SITE RESPONSIVE — All Devices
+   FULL-SITE RESPONSIVE — All Devices (Mobile-First)
    ═════════════════════════════════════════════════ */
 
-/* ── Tablet (max-width: 768px) ── */
-@media (max-width: 768px) {
-  .sec {
-    padding: 44px 0;
-  }
+/* ─── Global Focus States (Accessibility) ─── */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+.cta:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
 
-  .wrap {
-    padding: 0 18px;
-  }
+/* ─── Base Styles (Fluid Spacing & Typography) ─── */
+.sec {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
 
-  h2.h {
-    font-size: clamp(22px, 5.5vw, 32px);
-    margin-bottom: 14px;
-  }
+.sec-tight {
+  padding: clamp(1.5rem, 4vw, 3rem) 0;
+}
 
-  .lead {
-    font-size: 15px;
-  }
+.wrap {
+  padding: 0 clamp(1rem, 3.5vw, 1.5rem);
+}
 
-  /* Trust strip */
-  .trust .row {
-    gap: 8px 16px;
-  }
+h2.h {
+  font-size: clamp(1.5rem, 4.5vw, 2.375rem);
+  margin-bottom: clamp(12px, 2.5vw, 16px);
+}
 
-  .trust .item {
-    font-size: 11px;
-  }
+.lead {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
 
-  /* Transformation columns */
-  .tcols {
-    gap: 10px;
-  }
+/* ─── Fluid Layout Elements ─── */
+.trust .row {
+  gap: clamp(8px, 1.8vw, 16px) clamp(12px, 2.5vw, 24px);
+}
 
-  .tcol {
-    padding: 14px 12px;
-  }
+.trust .item {
+  font-size: clamp(11px, 1.5vw, 12.5px);
+  gap: clamp(6px, 1vw, 8px);
+}
 
-  .tcol li {
-    font-size: 12px;
-  }
+/* Transformation (Before / After) */
+.tcols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(10px, 2vw, 16px);
+}
 
-  /* Who grid */
-  .who {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
+.tcol {
+  border-radius: clamp(10px, 2vw, 14px);
+  padding: clamp(14px, 2.5vw, 18px) clamp(12px, 2vw, 16px);
+}
 
-  .who .w {
-    padding: 10px 11px;
-    font-size: 12px;
-  }
+.tcol li {
+  font-size: clamp(11.5px, 1.6vw, 13px);
+  padding-left: 20px;
+}
 
-  /* Prediction grid */
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
+/* Grids & Cards */
+.who {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(6px, 1.5vw, 10px);
+}
 
-  .gcard {
-    padding: 14px 11px;
-  }
+.who .w {
+  border-radius: clamp(8px, 1.5vw, 10px);
+  padding: clamp(10px, 2vw, 12px) clamp(10px, 2vw, 13px);
+  font-size: clamp(11.5px, 1.5vw, 13px);
+}
 
-  .gcard h4 {
-    font-size: 13px;
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(8px, 1.5vw, 12px);
+}
 
-  .gcard p {
-    font-size: 11px;
-  }
+.gcard {
+  padding: clamp(12px, 2vw, 16px) clamp(10px, 1.8vw, 13px);
+  border-radius: clamp(10px, 2vw, 14px);
+}
 
-  /* Bonuses */
-  .bonus {
-    gap: 12px;
-    padding: 14px;
-  }
+.gcard h4 {
+  font-size: clamp(12.5px, 1.8vw, 14.5px);
+}
 
-  /* Mentor card */
-  .mentor {
-    padding: 18px 16px;
-    border-radius: 16px;
-  }
+.gcard p {
+  font-size: clamp(10.5px, 1.5vw, 12px);
+}
 
-  .mentor .name {
-    font-size: 24px;
-  }
+/* Income Card */
+.income {
+  border-radius: clamp(12px, 2.5vw, 18px);
+  padding: clamp(20px, 4vw, 26px) clamp(16px, 3.5vw, 22px);
+}
 
-  .mentor .role {
-    font-size: 10.5px;
-    letter-spacing: .12em;
-  }
+.income .big {
+  font-size: clamp(24px, 6vw, 40px);
+}
 
-  .mentor-stats {
-    gap: 8px;
-  }
+.income .big small {
+  font-size: clamp(13px, 1.8vw, 14.5px);
+}
 
-  .mentor-stat {
-    padding: 10px 6px;
-  }
+.income p {
+  font-size: clamp(13px, 1.8vw, 14px);
+}
 
-  .mentor-stat b {
-    font-size: 18px;
-  }
+/* Bonuses */
+.bonus {
+  flex-direction: column;
+  gap: clamp(10px, 2vw, 14px);
+  border-radius: clamp(10px, 2vw, 12px);
+  padding: clamp(12px, 2.5vw, 16px);
+}
 
-  .mentor-stat span {
-    font-size: 9.5px;
-  }
+.bonus .tag {
+  align-self: flex-start;
+  font-size: clamp(9px, 1.3vw, 10px);
+}
 
-  .creds .c {
-    font-size: 12.5px;
-  }
+/* Mentor Card */
+.mentor {
+  border-radius: clamp(14px, 2.5vw, 18px);
+  padding: clamp(16px, 3.5vw, 22px) clamp(14px, 3vw, 20px);
+}
 
-  .awards {
-    padding: 12px 14px;
-  }
+.mentor-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(6px, 1.5vw, 10px);
+  margin: clamp(12px, 2vw, 16px) 0;
+}
 
-  .awards li {
-    font-size: 12px;
-  }
+.mentor-stat {
+  border-radius: clamp(8px, 2vw, 12px);
+  padding: clamp(8px, 1.5vw, 12px) clamp(4px, 1.2vw, 8px);
+}
 
-  .mission {
-    font-size: 12.5px;
-  }
+.mentor-stat b {
+  font-size: clamp(16px, 2.5vw, 20px);
+}
 
-  /* FAQ */
-  .faq summary {
-    padding: 14px 16px;
-    font-size: 13.5px;
-  }
+.mentor-stat span {
+  font-size: clamp(9px, 1.3vw, 10.5px);
+}
 
-  .faq .a {
-    padding: 0 16px 14px;
-    font-size: 13px;
-  }
+.mentor .name {
+  font-size: clamp(20px, 3.5vw, 27px);
+}
 
-  /* Testimonials */
-  .tcard {
-    padding: 16px;
-  }
+.mentor .role {
+  font-size: clamp(10px, 1.5vw, 11.5px);
+}
 
-  .tcard p {
-    font-size: 13px;
-  }
+.creds .c {
+  font-size: clamp(12px, 1.8vw, 13.5px);
+}
 
-  /* Income box */
-  .income {
-    padding: 22px 18px;
-  }
+.awards {
+  padding: clamp(10px, 2vw, 14px) clamp(12px, 2.2vw, 16px);
+  border-radius: clamp(8px, 1.5vw, 10px);
+}
 
-  .income p {
-    font-size: 13px;
-  }
+.awards li {
+  font-size: clamp(11.5px, 1.6vw, 12.5px);
+  padding-left: clamp(15px, 2.2vw, 18px);
+}
 
-  /* Learn list */
-  .learn .li {
-    font-size: 13.5px;
-  }
+.mission {
+  font-size: clamp(12px, 1.8vw, 13.5px);
+  padding-left: clamp(10px, 1.8vw, 14px);
+}
 
-  /* Final CTA */
-  .final h2 {
-    font-size: clamp(22px, 6vw, 34px);
-  }
+/* FAQ Section */
+.faq {
+  border-radius: clamp(10px, 2vw, 12px);
+}
 
-  .final p {
-    font-size: 14px;
-  }
+.faq summary {
+  padding: clamp(12px, 2vw, 16px) clamp(14px, 2.5vw, 18px);
+  font-size: clamp(13px, 1.8vw, 14.5px);
+}
 
-  /* CTA button */
-  .cta {
-    font-size: 16.5px;
-    padding: 16px 18px;
-  }
+.faq .a {
+  padding: 0 clamp(14px, 2.5vw, 18px) clamp(12px, 2vw, 16px);
+  font-size: clamp(12.5px, 1.6vw, 13.5px);
+}
 
-  .cta small {
-    font-size: 11px;
-  }
+/* Testimonials */
+.tcard {
+  border-radius: clamp(12px, 2vw, 14px);
+  padding: clamp(14px, 2.5vw, 18px);
+}
+
+.tcard p {
+  font-size: clamp(12.5px, 1.8vw, 14px);
+}
+
+.tcard .who2 {
+  font-size: clamp(11.5px, 1.6vw, 12.5px);
+}
+
+.t-photo {
+  width: clamp(36px, 6vw, 44px);
+  height: clamp(36px, 6vw, 44px);
+}
+
+/* Final CTA Section */
+.final h2 {
+  font-size: clamp(20px, 5.5vw, 40px);
+  margin-bottom: clamp(10px, 2vw, 14px);
+}
+
+.final p {
+  font-size: clamp(12.5px, 1.8vw, 15.5px);
+  margin-bottom: clamp(16px, 3vw, 22px);
+}
+
+/* Primary CTA Button Touch Targets */
+.cta {
+  font-size: clamp(15.5px, 2vw, 18.5px);
+  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.5vw, 22px);
+  min-height: 44px;
+}
+
+.cta small {
+  font-size: clamp(10px, 1.4vw, 12px);
+}
+
+/* Sticky Mobile Bar CTA Touch Targets */
+.sticky {
+  padding: clamp(10px, 2vw, 12px) clamp(12px, 2.5vw, 14px) clamp(14px, 2.5vw, 16px);
+}
+
+.sticky .lbl {
+  font-size: clamp(10.5px, 1.5vw, 11.5px);
+}
+
+.sticky .lbl b {
+  font-size: clamp(16px, 2.5vw, 20px);
+}
+
+.sticky .cta {
+  font-size: clamp(13px, 1.8vw, 15.5px);
+  padding: clamp(11px, 1.8vw, 14px) clamp(10px, 1.8vw, 16px);
+  min-height: 44px;
+}
+
+/* Footer Sizing */
+footer {
+  padding: clamp(22px, 4vw, 26px) clamp(16px, 3vw, 20px) clamp(80px, 12vw, 90px);
+  font-size: clamp(10.5px, 1.4vw, 11.5px);
 }
 
 
-/* ── Large Phone (max-width: 600px) ── */
-@media (max-width: 600px) {
-  .sec {
-    padding: 36px 0;
-  }
+/* ═════════════════════════════════════════════════
+   BREAKPOINTS PROGRESSIVE ENHANCEMENT
+   ═════════════════════════════════════════════════ */
 
-  /* Transformation: single column */
-  .tcols {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  /* Who grid: 2 columns stays but smaller */
-  .who .w {
-    padding: 10px;
-    font-size: 12px;
-    gap: 8px;
-  }
-
-  .who .w .e {
-    font-size: 15px;
-  }
-
-  /* Prediction grid: 2 col with tighter spacing */
-  .grid {
-    gap: 8px;
-  }
-
-  /* Bonus layout */
-  .bonus {
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px;
-  }
-
-  .bonus .tag {
-    align-self: flex-start;
-  }
-
-  /* Mentor photo */
-  .mentor-photo {
-    border-radius: 10px;
-  }
-
-  .mentor-photo img {
-    border-radius: 10px;
-  }
-
-  /* Mentor stats: single row stays as 2×2 */
-  .mentor-stats {
-    gap: 6px;
-  }
-}
-
-
-/* ── Mobile (max-width: 480px) ── */
-@media (max-width: 480px) {
-  .sec {
-    padding: 30px 0;
-  }
-
-  .wrap {
-    padding: 0 14px;
-  }
-
-  h2.h {
-    font-size: clamp(20px, 6vw, 26px);
-    margin-bottom: 12px;
-  }
-
-  .eyebrow {
-    font-size: 10.5px;
-    letter-spacing: .2em;
-    margin-bottom: 12px;
-  }
-
-  .lead {
-    font-size: 14px;
-  }
-
-  /* Trust strip */
-  .trust {
-    padding: 12px 0;
-  }
-
+/* ── 320px (Small Phones) ── */
+@media (min-width: 320px) {
   .trust .row {
-    gap: 6px 12px;
+    flex-wrap: wrap;
     justify-content: center;
   }
+}
 
-  .trust .item {
-    font-size: 10px;
-    gap: 6px;
-  }
-
-  .trust .dot {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* Cards */
-  .card {
-    padding: 16px;
-    border-radius: 12px;
-  }
-
-  .card p {
-    font-size: 13px;
-  }
-
-  /* Transformation columns */
-  .tcol {
-    padding: 14px 12px;
-    border-radius: 12px;
-  }
-
-  .tcol h4 {
-    font-size: 10.5px;
-    margin-bottom: 10px;
-  }
-
-  .tcol li {
-    font-size: 12px;
-    padding-left: 16px;
-    gap: 8px;
-  }
-
-  /* Who grid */
+/* ── 360px (Standard Medium Phones) ── */
+@media (min-width: 360px) {
   .who {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .who .w {
-    padding: 10px 8px;
-    font-size: 11.5px;
-    gap: 6px;
-    border-radius: 8px;
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .who .w .e {
-    font-size: 14px;
+/* ── 375px (iPhone Portrait) ── */
+@media (min-width: 375px) {
+  .hero-live-pill {
+    max-width: 100%;
   }
+}
 
-  /* Prediction grid */
-  .gcard {
-    padding: 12px 10px;
-    border-radius: 10px;
+/* ── 390px (iPhone Pro / Modern Android) ── */
+@media (min-width: 390px) {
+  .card p {
+    font-size: clamp(13.5px, 1.8vw, 14.5px);
   }
+}
 
-  .gcard .ic {
-    width: 32px;
-    height: 32px;
-    font-size: 15px;
-    margin-bottom: 7px;
+/* ── 414px (Large iPhones / Android Plus) ── */
+@media (min-width: 414px) {
+  .hero-info-badge {
+    padding: 10px 14px;
   }
+}
 
-  .gcard h4 {
-    font-size: 12.5px;
+/* ── 480px (Phablets / Large Mobile) ── */
+@media (min-width: 480px) {
+  .sec {
+    padding: clamp(3rem, 5vw, 4.5rem) 0;
   }
+}
 
-  .gcard p {
-    font-size: 10.5px;
-  }
-
-  /* Income box */
-  .income {
-    padding: 20px 16px;
-    border-radius: 14px;
-  }
-
-  .income .big {
-    font-size: clamp(24px, 8vw, 32px);
-  }
-
-  .income .big small {
-    font-size: 13px;
-  }
-
-  .income p {
-    font-size: 13px;
-  }
-
-  .disclaimer {
-    font-size: 10px;
-  }
-
-  /* Learn list */
-  .learn {
-    gap: 10px;
-  }
-
-  .learn .li {
-    font-size: 13px;
-    gap: 10px;
-  }
-
-  .learn .n {
-    width: 26px;
-    height: 26px;
-    font-size: 12px;
-    border-radius: 6px;
-  }
-
-  /* Bonus */
+/* ── 576px (Small Tablets / Landscape Phones) ── */
+@media (min-width: 576px) {
   .bonus {
-    padding: 12px;
-    border-radius: 10px;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .bonus .tag {
-    font-size: 9px;
-    padding: 5px 8px;
+    align-self: initial;
+  }
+}
+
+/* ── 600px (Medium Phablets / Landscape) ── */
+@media (min-width: 600px) {
+  .tcols {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Mentor */
-  .mentor {
-    padding: 14px 12px;
-    border-radius: 14px;
+  .who {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .mentor .name {
-    font-size: 22px;
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .mentor .role {
-    font-size: 10px;
-    letter-spacing: .1em;
-    margin-bottom: 12px;
-  }
-
+/* ── 640px (iPads Portrait / Small Tablets) ── */
+@media (min-width: 640px) {
   .mentor-stats {
-    margin: 12px 0 14px;
-    gap: 6px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── 768px (Standard Tablets) ── */
+@media (min-width: 768px) {
+  .wrap {
+    padding: 0 24px;
   }
 
-  .mentor-stat {
-    padding: 8px 4px;
-    border-radius: 10px;
+  .who {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .mentor-stat b {
-    font-size: 16px;
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── 820px (iPad Air / Larger Tablets) ── */
+@media (min-width: 820px) {
+  .sec {
+    padding: clamp(4rem, 6vw, 5.5rem) 0;
+  }
+}
+
+/* ── 1024px (Small Laptops / iPad Pro Landscape) ── */
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(40px, 5vw, 64px);
+    padding: 0 clamp(24px, 4vw, 48px);
   }
 
-  .mentor-stat span {
-    font-size: 9px;
+  .hero-left {
+    text-align: left;
   }
 
-  .creds {
-    gap: 7px;
-    margin-bottom: 12px;
+  .hero-live-pill {
+    margin: 0 0 32px 0;
   }
 
-  .creds .c {
-    font-size: 12px;
-    gap: 8px;
+  .hero-info-grid {
+    justify-content: flex-start;
   }
 
-  .awards {
-    padding: 10px 12px;
-    border-radius: 8px;
+  .hero-cta-wrap .cta {
+    margin: 0;
   }
 
-  .awards h5 {
-    font-size: 9.5px;
-    margin-bottom: 8px;
+  .hero-cta-note {
+    text-align: left;
   }
 
-  .awards li {
-    font-size: 11.5px;
-    padding-left: 15px;
-    margin-bottom: 4px;
+  .hero-trust-row {
+    justify-content: flex-start;
+  }
+}
+
+/* ── 1280px (Standard Desktop) ── */
+@media (min-width: 1280px) {
+  .pp-container {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items: start;
   }
 
-  .mission {
-    font-size: 12px;
-    padding-left: 12px;
+  .pp-info {
+    text-align: left;
+    position: sticky;
+    top: 100px;
+  }
+
+  .pp-subtext {
+    margin: 0 0 28px 0;
+  }
+
+  .pp-celestial-art {
+    display: block;
+    max-width: 260px;
+    opacity: 0.3;
     margin-top: 12px;
   }
 
-  /* Testimonials */
-  .tcard {
-    padding: 14px;
-    border-radius: 12px;
+  .pp-celestial-art svg {
+    width: 100%;
+    height: auto;
   }
+}
 
-  .tcard p {
-    font-size: 12.5px;
+/* ── 1440px (Wide Desktop) ── */
+@media (min-width: 1440px) {
+  .hero-content {
+    max-width: 1300px;
   }
-
-  .tcard .who2 {
-    font-size: 11.5px;
+  
+  .pp-container {
+    max-width: 1300px;
   }
+}
 
-  .t-photo {
-    width: 36px;
-    height: 36px;
-    margin-right: 8px;
+/* ── 1536px (Large Laptop / Desktop) ── */
+@media (min-width: 1536px) {
+  body {
+    font-size: 17px;
   }
+}
 
-  .stars {
-    font-size: 12px;
+/* ── 1920px (Full HD Monitors) ── */
+@media (min-width: 1920px) {
+  .hero-content, 
+  .pp-container {
+    max-width: 1500px;
   }
+}
 
-  /* FAQ */
-  .faq {
-    border-radius: 10px;
+/* ── 2560px (4K / Ultra-wide Monitors) ── */
+@media (min-width: 2560px) {
+  .hero-content, 
+  .pp-container {
+    max-width: 1800px;
+    gap: 80px;
   }
-
-  .faq summary {
-    padding: 12px 14px;
-    font-size: 13px;
-    gap: 10px;
-  }
-
-  .faq summary .p {
-    width: 20px;
-    height: 20px;
-  }
-
-  .faq .a {
-    padding: 0 14px 12px;
-    font-size: 12.5px;
-  }
-
-  /* Final CTA */
-  .final {
-    padding: 40px 0;
-  }
-
-  .final h2 {
-    font-size: clamp(20px, 6.5vw, 30px);
-    margin-bottom: 12px;
-  }
-
-  .final p {
-    font-size: 13.5px;
-    margin-bottom: 18px;
-  }
-
-  /* CTA button */
-  .cta {
-    font-size: 15.5px;
-    padding: 14px 16px;
-    border-radius: 8px;
-  }
-
-  .cta::before,
-  .cta::after {
-    font-size: 9px;
-    left: 10px;
-  }
-
-  .cta::after {
-    left: auto;
-    right: 10px;
-  }
-
-  .cta small {
-    font-size: 10px;
-    letter-spacing: .08em;
-  }
-
-  /* Sticky bar */
-  .sticky {
-    padding: 10px 12px 14px;
-  }
-
-  .sticky .inner {
-    gap: 10px;
-  }
-
-  .sticky .lbl {
-    font-size: 10.5px;
-  }
-
-  .sticky .lbl b {
+  
+  body {
     font-size: 18px;
   }
-
-  .sticky .cta {
-    font-size: 14px;
-    padding: 12px 14px;
-  }
-
-  /* Footer */
-  footer {
-    padding: 22px 16px 80px;
-    font-size: 10.5px;
-  }
-
-  /* Diya */
-  .diya-wrap svg {
-    width: 48px;
-    height: 48px;
-  }
 }
 
-
-/* ── Small Phone (max-width: 360px) ── */
-@media (max-width: 360px) {
-  .wrap {
-    padding: 0 12px;
-  }
-
-  h2.h {
-    font-size: 20px;
-  }
-
-  .eyebrow {
-    font-size: 9.5px;
-  }
-
-  /* Trust strip wraps to column */
-  .trust .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* Transformation stays stacked */
-  .tcol li {
-    font-size: 11px;
-  }
-
-  /* Who grid: single column on very small screens */
-  .who {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  /* Prediction grid: single column */
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  /* Income */
-  .income .big {
-    font-size: 24px;
-  }
-
-  /* Mentor */
-  .mentor .name {
-    font-size: 20px;
-  }
-
-  .mentor-stat b {
-    font-size: 15px;
-  }
-
-  /* CTA */
-  .cta {
-    font-size: 14.5px;
-    padding: 13px 12px;
-  }
-
-  /* FAQ */
-  .faq summary {
-    font-size: 12px;
-    padding: 11px 12px;
-  }
-
-  .faq .a {
-    font-size: 11.5px;
-    padding: 0 12px 10px;
-  }
-
-  /* Final */
-  .final h2 {
-    font-size: 19px;
-  }
-
-  .final p {
-    font-size: 12.5px;
-  }
-
-  /* Sticky */
-  .sticky .lbl b {
-    font-size: 16px;
-  }
-
-  .sticky .cta {
-    font-size: 13px;
-    padding: 11px 10px;
-  }
-}
 
