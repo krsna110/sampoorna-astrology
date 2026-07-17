@@ -783,6 +783,8 @@ h2.h .accent {
 .hero-stat-item b {
   font-size: 15px;
   color: #3D1B0C;
+  font-variant-numeric: tabular-nums;
+  min-height: 1.2em;
 }
 
 .hero-stat-item span {

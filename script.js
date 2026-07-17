@@ -28,6 +28,61 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
+// ─── Animated counters for hero stats ───
+const counterItems = document.querySelectorAll('.counter-number');
+if (counterItems.length) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const formatCounterValue = (value, decimals, prefix = '', suffix = '') => {
+    const fixedValue = Number(value).toFixed(decimals);
+    const [whole, frac = ''] = fixedValue.split('.');
+    const formattedWhole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return `${prefix}${formattedWhole}${frac ? `.${frac}` : ''}${suffix}`;
+  };
+
+  const animateCounter = (element) => {
+    if (prefersReducedMotion) {
+      element.textContent = formatCounterValue(
+        element.dataset.counter,
+        Number(element.dataset.decimals || 0),
+        element.dataset.prefix || '',
+        element.dataset.suffix || ''
+      );
+      return;
+    }
+
+    const target = Number(element.dataset.counter || 0);
+    const decimals = Number(element.dataset.decimals || 0);
+    const suffix = element.dataset.suffix || '';
+    const prefix = element.dataset.prefix || '';
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const run = (now) => {
+      const progress = Math.min(1, (now - startTime) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const currentValue = target * eased;
+      element.textContent = formatCounterValue(currentValue, decimals, prefix, suffix);
+
+      if (progress < 1) {
+        requestAnimationFrame(run);
+      }
+    };
+
+    requestAnimationFrame(run);
+  };
+
+  const counterObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counterItems.forEach((item) => counterObserver.observe(item));
+}
 
 // ─── Sticky bar: show after scrolling past hero ───
 const stickyBar = document.getElementById('sticky');
