@@ -670,8 +670,8 @@ h2.h .accent {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -55%);
-  width: 340px;
-  height: 340px;
+  width: 300px;
+  height: 300px;
   pointer-events: none;
   z-index: 0;
 }
@@ -708,8 +708,8 @@ h2.h .accent {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
-  height: 280px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(232, 199, 102, .24) 0%, rgba(224, 117, 90, .08) 50%, transparent 70%);
   animation: hero-halo-breathe 4s ease-in-out infinite;
@@ -733,8 +733,8 @@ h2.h .accent {
 .hero-portrait {
   position: relative;
   z-index: 2;
-  width: 200px;
-  height: 200px;
+  width: 176px;
+  height: 176px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(201, 162, 39, .45);
@@ -2099,9 +2099,10 @@ h2.h .accent {
 }
 
 .mentor-photo {
-  width: 100%;
+  width: min(100%, 30rem);
   aspect-ratio: 4 / 3;
   margin-bottom: 18px;
+  margin-inline: auto;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -2515,23 +2516,23 @@ footer,
 }
 
 .hero-portrait-wrap {
-  width: min(100%, 24rem);
+  width: min(100%, 21rem);
   margin-inline: auto;
 }
 
 .hero-halo {
-  width: min(20rem, 78vw);
-  height: min(20rem, 78vw);
+  width: min(18rem, 70vw);
+  height: min(18rem, 70vw);
 }
 
 .hero-halo-glow {
-  width: min(16rem, 64vw);
-  height: min(16rem, 64vw);
+  width: min(14rem, 58vw);
+  height: min(14rem, 58vw);
 }
 
 .hero-portrait {
-  width: min(12rem, 58vw);
-  height: min(12rem, 58vw);
+  width: min(10.5rem, 50vw);
+  height: min(10.5rem, 50vw);
   aspect-ratio: 1;
 }
 
@@ -3370,7 +3371,7 @@ footer {
 .wa-mini-shot {
   margin: 0;
   flex: 0 0 auto;
-  width: min(176px, 40vw);
+  width: min(132px, 30vw);
   padding: 5px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.78);
@@ -3406,7 +3407,7 @@ footer {
 .wa-shot {
   margin: 0;
   flex: 0 0 auto;
-  width: min(372px, 92vw);
+  width: min(284px, 68vw);
   border-radius: 24px;
   padding: 8px;
   background: rgba(255, 255, 255, 0.8);
@@ -3418,7 +3419,7 @@ footer {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
   border-radius: 18px;
   background: #e6dcc9;
@@ -3451,7 +3452,7 @@ footer {
   }
 
   .wa-mini-shot {
-    width: min(140px, 42vw);
+    width: min(104px, 30vw);
     padding: 4px;
     border-radius: 14px;
   }
@@ -3466,7 +3467,7 @@ footer {
   }
 
   .wa-shot {
-    width: min(316px, 94vw);
+    width: min(236px, 72vw);
     border-radius: 20px;
     padding: 7px;
   }
