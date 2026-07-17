@@ -42,6 +42,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -53,10 +54,6 @@ body {
   overflow-x: clip;
   min-width: 320px;
   font-size: clamp(0.95rem, 1.8vw, 1rem);
-}
-
-html {
-  overflow-x: clip;
 }
 
 img,
@@ -96,6 +93,60 @@ a {
   text-align: center;
 }
 
+.bg-ivory-2 {
+  background: var(--ivory-2);
+}
+
+.mt18 {
+  margin-top: 18px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb18 {
+  margin-bottom: 18px;
+}
+
+.fs145 {
+  font-size: 14.5px;
+}
+
+.text-wine {
+  color: var(--wine);
+}
+
+.text-wine-strong {
+  color: var(--wine);
+  font-weight: 700;
+}
+
+.muted-13 {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note-mint {
+  color: #D3F0E5;
+  font-size: 13.5px;
+}
+
+.note-dark {
+  color: #B9B6D6;
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+.icon-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.grow-1 {
+  flex: 1;
+}
+
 /* ─── Decorative: Constellations & Glows ─── */
 .constellation {
   position: absolute;
@@ -119,25 +170,6 @@ a {
 }
 
 /* ─── Image Placeholders ─── */
-.imgph {
-  background: repeating-linear-gradient(135deg, var(--ivory-2), var(--ivory-2) 10px, #e6d3ac 10px, #e6d3ac 20px);
-  border: 1.5px dashed var(--gold-dim);
-  border-radius: var(--r);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--muted);
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 14px;
-}
-
-.imgph.dark {
-  background: repeating-linear-gradient(135deg, var(--terracotta-mid), var(--terracotta-mid) 10px, var(--terracotta-light) 10px, var(--terracotta-light) 20px);
-  border-color: var(--gold);
-  color: var(--muted-cosmic);
-}
 
 /* ─── Typography ─── */
 .eyebrow {
