@@ -32,7 +32,7 @@ setInterval(tick, 1000);
 // ─── Sticky bar: show after scrolling past hero ───
 const stickyBar = document.getElementById('sticky');
 const heroSection = document.querySelector('.hero');
-if (heroSection) {
+if (stickyBar && heroSection) {
   new IntersectionObserver(([e]) => {
     stickyBar.classList.toggle('show', !e.isIntersecting);
   }).observe(heroSection);
@@ -47,64 +47,109 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+const ppContinueBtn = document.querySelector('.pp-continue-btn');
+if (ppContinueBtn) {
+  ppContinueBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.querySelector('#learn-section')?.scrollIntoView({ behavior: 'smooth' });
+  });
+}
 
-// ─── Floating golden particles (hero) ───
-(function () {
-  const canvas = document.getElementById('hero-particles');
+
+// ─── Floating particles ───
+function initFloatingParticles(canvasId, count, config = {}) {
+  const canvas = document.getElementById(canvasId);
   if (!canvas || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const ctx = canvas.getContext('2d');
-  let W, H;
-  const COUNT = 35;
+  let W = 0;
+  let H = 0;
   const particles = [];
+  const opts = {
+    radius: [0.5, 2.2],
+    speedX: 0.3,
+    speedY: [0.15, 0.55],
+    opacity: [0.2, 0.8],
+    freqSpeed: [0.01, 0.03],
+    ...config
+  };
+
+  function rand(range) {
+    return Math.random() * (range[1] - range[0]) + range[0];
+  }
 
   function resize() {
-    const r = canvas.parentElement.getBoundingClientRect();
-    W = canvas.width = r.width;
-    H = canvas.height = r.height;
+    const rect = canvas.parentElement.getBoundingClientRect();
+    W = canvas.width = rect.width;
+    H = canvas.height = rect.height;
   }
-  resize();
-  addEventListener('resize', resize);
 
-  for (let i = 0; i < COUNT; i++) {
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < count; i++) {
     particles.push({
-      x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 2.2 + 0.6,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: -(Math.random() * 0.4 + 0.15),
-      o: Math.random() * 0.6 + 0.2,
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: rand(opts.radius),
+      dx: (Math.random() - 0.5) * opts.speedX,
+      dy: -rand(opts.speedY),
+      o: rand(opts.opacity),
       f: Math.random() * Math.PI * 2,
-      fs: Math.random() * 0.02 + 0.01
+      fs: rand(opts.freqSpeed)
     });
   }
 
   function draw() {
     ctx.clearRect(0, 0, W, H);
+
     for (const p of particles) {
       p.x += p.dx;
       p.y += p.dy;
       p.f += p.fs;
-      const a = p.o * (0.5 + 0.5 * Math.sin(p.f));
+      const alpha = p.o * (0.5 + 0.5 * Math.sin(p.f));
 
       if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
       if (p.x < -10) p.x = W + 10;
       if (p.x > W + 10) p.x = -10;
 
-      // Glow halo
-      const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-      g.addColorStop(0, `rgba(232,199,102,${a})`);
-      g.addColorStop(1, 'rgba(232,199,102,0)');
-      ctx.beginPath(); ctx.fillStyle = g;
-      ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2); ctx.fill();
+      const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+      glow.addColorStop(0, `rgba(232,199,102,${alpha})`);
+      glow.addColorStop(1, 'rgba(232,199,102,0)');
 
-      // Bright center dot
-      ctx.beginPath(); ctx.fillStyle = `rgba(255,240,200,${a})`;
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath();
+      ctx.fillStyle = glow;
+      ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(255,240,200,${alpha})`;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
     }
+
     requestAnimationFrame(draw);
   }
+
   draw();
-})();
+}
+
+initFloatingParticles('hero-particles', 35, {
+  radius: [0.6, 2.8],
+  speedX: 0.3,
+  speedY: [0.15, 0.55],
+  opacity: [0.2, 0.8],
+  freqSpeed: [0.01, 0.03]
+});
+
+initFloatingParticles('pp-particles', 28, {
+  radius: [0.5, 2.3],
+  speedX: 0.2,
+  speedY: [0.1, 0.4],
+  opacity: [0.15, 0.65],
+  freqSpeed: [0.005, 0.02]
+});
+
 
 // â”€â”€â”€ Hero GSAP entrance animations â”€â”€â”€
 (function () {
