@@ -3347,6 +3347,47 @@ footer {
   overflow: hidden;
 }
 
+.wa-mini-showcase {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  background: linear-gradient(180deg, #f5ead7 0%, #f8efdf 100%);
+  overflow: hidden;
+}
+
+.wa-mini-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.wa-mini-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  animation: wa-mini-scroll 26s linear infinite;
+}
+
+.wa-mini-shot {
+  margin: 0;
+  flex: 0 0 auto;
+  width: min(176px, 40vw);
+  padding: 5px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  box-shadow: 0 14px 30px -24px rgba(54, 31, 12, 0.45);
+}
+
+.wa-mini-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #e6dcc9;
+}
+
 .wa-marquee {
   position: relative;
   margin-top: 22px;
@@ -3359,13 +3400,13 @@ footer {
   display: flex;
   width: max-content;
   gap: 18px;
-  animation: wa-scroll 24s linear infinite;
+  animation: wa-scroll 34s linear infinite;
 }
 
 .wa-shot {
   margin: 0;
   flex: 0 0 auto;
-  width: min(260px, 72vw);
+  width: min(372px, 92vw);
   border-radius: 24px;
   padding: 8px;
   background: rgba(255, 255, 255, 0.8);
@@ -3377,7 +3418,7 @@ footer {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 19;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 18px;
   background: #e6dcc9;
@@ -3393,14 +3434,39 @@ footer {
   }
 }
 
+@keyframes wa-mini-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
 @media (max-width: 640px) {
+  .wa-mini-track {
+    gap: 10px;
+    animation-duration: 22s;
+  }
+
+  .wa-mini-shot {
+    width: min(140px, 42vw);
+    padding: 4px;
+    border-radius: 14px;
+  }
+
+  .wa-mini-shot img {
+    border-radius: 10px;
+  }
+
   .wa-track {
     gap: 14px;
-    animation-duration: 20s;
+    animation-duration: 28s;
   }
 
   .wa-shot {
-    width: min(220px, 74vw);
+    width: min(316px, 94vw);
     border-radius: 20px;
     padding: 7px;
   }
