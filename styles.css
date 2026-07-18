@@ -3502,11 +3502,26 @@ footer {
     width: min(236px, 72vw);
     border-radius: 20px;
     padding: 7px;
+
   }
 
   .wa-shot img {
     border-radius: 15px;
   }
 }
+
+/* Logo Styling */
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.logo img {
+  display: block;
+  height: 24px;
+  width: auto;
+}
+
 
 
