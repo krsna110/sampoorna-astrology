@@ -3158,7 +3158,7 @@ h2.h {
 /* Footer Sizing */
 footer {
   padding: clamp(22px, 4vw, 26px) clamp(16px, 3vw, 20px) clamp(80px, 12vw, 90px);
-  font-size: clamp(10.5px, 1.4vw, 11.5px);
+  font-size: clamp(13px, 1.8vw, 15px);
 }
 
 
@@ -3403,9 +3403,9 @@ footer {
 .wa-mini-shot {
   margin: 0;
   flex: 0 0 auto;
-  width: min(132px, 30vw);
-  padding: 5px;
-  border-radius: 18px;
+  width: min(200px, 40vw);
+  padding: 8px;
+  border-radius: 22px;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(201, 162, 39, 0.22);
   box-shadow: 0 14px 30px -24px rgba(54, 31, 12, 0.45);
@@ -3484,9 +3484,9 @@ footer {
   }
 
   .wa-mini-shot {
-    width: min(104px, 30vw);
-    padding: 4px;
-    border-radius: 14px;
+    width: min(160px, 35vw);
+    padding: 6px;
+    border-radius: 18px;
   }
 
   .wa-mini-shot img {
@@ -3512,16 +3512,18 @@ footer {
 
 /* Logo Styling */
 .logo {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px;
 }
 
 .logo img {
   display: block;
-  height: 24px;
+  height: 150px;
   width: auto;
 }
+
 
 
 

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment Successful - Bhrigu Nandi Nadi Masterclass Confirmation">
+  <title>Payment Successful - Thank You!</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hind:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Payment Success Page Styles */
+    .success-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--ivory-3) 0%, var(--ivory-2) 100%);
+      position: relative;
+    }
+
+    .success-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(232, 199, 102, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .success-box {
+      max-width: 550px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .checkmark {
+      width: clamp(80px, 15vw, 120px);
+      height: clamp(80px, 15vw, 120px);
+      margin: 0 auto 30px;
+      background: linear-gradient(135deg, var(--peacock), #0fa88f);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 40px rgba(18, 135, 106, 0.3);
+      animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .checkmark svg {
+      width: 70%;
+      height: 70%;
+      stroke: white;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      animation: drawCheck 0.6s ease-out 0.3s both;
+    }
+
+    @keyframes drawCheck {
+      from {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+      to {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .success-heading {
+      font-family: var(--display);
+      font-size: clamp(28px, 7vw, 44px);
+      color: var(--wine);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .success-subheading {
+      font-size: clamp(16px, 3.5vw, 20px);
+      color: var(--gold);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    .success-text {
+      font-size: clamp(14px, 2.2vw, 16px);
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .confirmation-details {
+      background: white;
+      border-radius: 12px;
+      padding: clamp(20px, 4vw, 28px);
+      margin-bottom: 32px;
+      border: 1px solid rgba(232, 199, 102, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(12px, 2vw, 16px) 0;
+      border-bottom: 1px solid rgba(232, 199, 102, 0.1);
+      font-size: clamp(13px, 2vw, 15px);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .detail-value {
+      color: var(--wine);
+      font-weight: 700;
+    }
+
+    .next-steps {
+      background: rgba(232, 199, 102, 0.08);
+      border-left: 4px solid var(--gold);
+      padding: clamp(18px, 4vw, 24px);
+      border-radius: 8px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .next-steps h3 {
+      font-family: var(--display);
+      font-size: clamp(16px, 3vw, 18px);
+      color: var(--wine);
+      margin-bottom: 12px;
+    }
+
+    .next-steps ol {
+      margin: 0;
+      padding-left: 24px;
+      font-size: clamp(13px, 2vw, 14px);
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .next-steps li {
+      margin-bottom: 10px;
+    }
+
+    .success-cta {
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (min-width: 560px) {
+      .success-cta {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: clamp(16px, 3vw, 20px) clamp(28px, 6vw, 40px);
+      font-size: clamp(15px, 2.2vw, 18px);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      min-height: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #20ba5f);
+      color: white;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      font-size: clamp(16px, 2.5vw, 20px);
+      padding: clamp(18px, 4vw, 24px) clamp(32px, 7vw, 48px);
+      min-height: 56px;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-whatsapp:active {
+      transform: translateY(-1px) scale(1.02);
+    }
+
+    .support-info {
+      font-size: clamp(12px, 1.8vw, 13px);
+      color: var(--muted);
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(232, 199, 102, 0.2);
+    }
+
+    .support-info a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .support-info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="success-container">
+    <div class="success-box">
+      <!-- Checkmark Icon -->
+      <div class="checkmark">
+        <svg viewBox="0 0 52 52">
+          <path d="M 16 26 L 24 34 L 36 16" />
+        </svg>
+      </div>
+
+      <!-- Success Message -->
+      <h1 class="success-heading">🎉 Payment Successful!</h1>
+      <p class="success-subheading">Thank You for Your Purchase</p>
+      <p class="success-text">
+        Your payment has been processed successfully. Get ready to unlock the secrets of Bhrigu Nandi Nadi with Dr. Anchal Rana's masterclass!
+      </p>
+
+      <!-- Confirmation Details -->
+      <div class="confirmation-details">
+        <div class="detail-row">
+          <span class="detail-label">Order ID</span>
+          <span class="detail-value">#BNN2024001</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Course</span>
+          <span class="detail-value">BNN Masterclass</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Amount Paid</span>
+          <span class="detail-value">₹21</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Date</span>
+          <span class="detail-value">26th july 2026</span>
+        </div>
+                <div class="detail-row">
+          <span class="detail-label">Time</span>
+          <span class="detail-value">12:00 Afternoon</span>
+        </div>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="next-steps">
+        <h3>📋 Next Steps:</h3>
+        <ol>
+          <li>Tap on connect on WhatsApp</li>
+          <li>Join community link for Webinar updates</li>
+          <li>Remember your webinar date</li>
+          <li>Enjoy your live interactive session</li>
+        </ol>
+      </div>
+
+      <!-- CTAs -->
+      <div class="success-cta">
+        <a href="https://wa.me/919999999999?text=I%20just%20completed%20the%20BNN%20Masterclass%20purchase!" class="btn btn-whatsapp" target="_blank">💬 JOIN WHATSAPP COMMUNITY</a>
+      </div>
+
+      <!-- Support -->
+      <div class="support-info">
+        <p>Questions? <a href="mailto:support@sampoornaastrology.com">Contact our support team</a> or call us at +91-XXXX-XXX-XXX</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    © <span id="yr"></span>Powered by TheAdsLancer - India's Leading Performance Marketing Agency for Coaches & High-Ticket Funnels.
+    <figure class="logo" aria-hidden="true">
+      <img src="TheAdslancer/logo.png" alt="TheAdsLancer">
+    </figure>
+    .
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('yr').textContent = new Date().getFullYear() + ' ';
+  </script>
+</body>
+
+</html>
