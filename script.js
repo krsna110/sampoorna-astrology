@@ -3,8 +3,8 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 // ─── Countdown with flip animation ───
-// Webinar date: July 25, 2026 at 7:00 PM IST
-const TARGET = new Date('2026-07-25T19:00:00+05:30');
+// Webinar date: July 26, 2026 at 12:00 PM IST
+const TARGET = new Date('2026-07-26T12:00:00+05:30');
 const pad = n => String(n).padStart(2, '0');
 const prev = { d: '', h: '', m: '', s: '' };
 
